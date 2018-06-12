@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+    <!-- node for publishing the camera transform -->
+
+    <node name="robot_tf_publisher" pkg="camera_tag_calibration" type="calibration_tf_publisher" output="screen">
+        <param name="base_frame" value="world"/>
+        <param name="end_frame" value="world_tag"/>
+        <param name="file_name" value="/calibration/robot_calib.txt"/>
+    </node>
+
+    <node name="kinect_tf_mimic" pkg="camera_tag_calibration" type="calibration_tf_mimic" output="screen">
+        <param name="base_frame" value="world_tag"/>
+        <param name="end_frame" value="kinect2_link"/>
+        <param name="detected_frame" value="world_tag2"/>
+    </node>
+
+    <!-- launching the kinect and tag detection -->
+    <include file="$(find camera_tag_calibration)/launch/kinect_tf.launch"/>
+
+</launch>
