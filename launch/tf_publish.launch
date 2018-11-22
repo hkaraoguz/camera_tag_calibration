@@ -4,7 +4,7 @@
     <!-- node for publishing the camera transform -->
 
     <node name="robot_tf_publisher" pkg="camera_tag_calibration" type="calibration_tf_publisher" output="screen">
-        <param name="base_frame" value="world"/>
+        <param name="base_frame" value="yumi_pedestal"/>
         <param name="end_frame" value="world_tag"/>
         <param name="file_name" value="/calibration/robot_calib.txt"/>
     </node>
