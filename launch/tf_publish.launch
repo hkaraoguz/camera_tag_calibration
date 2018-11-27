@@ -9,7 +9,7 @@
         <param name="file_name" value="/calibration/robot_calib.txt"/>
     </node>
 
-    <node name="kinect_tf_mimic" pkg="camera_tag_calibration" type="calibration_tf_mimic" output="screen">
+    <node name="kinect_tf_mimic" pkg="camera_tag_calibration" type="calibration_tf_mimic" >
         <param name="base_frame" value="world_tag"/>
         <param name="end_frame" value="kinect2_link"/>
         <param name="detected_frame" value="world_tag2"/>
